@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,700,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #585F6E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.login-bg {
+  background: url(./asserts/images/home-banner.webp) no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  min-height: 80dvh;
+}
+
+@keyframes heroBgAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+#login-form {
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+#login-form .login-form-content {
+  display: flex;
+  flex-direction: row;
+  gap: 50%;
+}
+
+#login-form .login-form {
+  text-align: center;
+  margin-top: 7%;
+  margin-left: 10%;
+  background: rgba(42, 42, 42, 0.7);
+  width: 350px;
+  height: 470px;
+  padding: 35px;
+}
+
+#login-form .login-form .form-body {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-form .input-section {
+  margin-top: 35px;
+  line-height: 40px;
+}
+
+#login-form .input-section-fields {
+  font-size: 20px;
+  text-align: left;
+}
+
+#login-form input {
+  width: 100%;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid yellow;
+  border-radius: 5px;
+  color: rgb(164, 161, 161);
+  padding-left: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+#login-form .loginBtn {
+  width: 100%;
+  height: 42px;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+#login-form .forget-pw-section {
+  padding-top: 25px;
+}
+
+#login-form .forget-pw-section .forget-pw-link {
+  color: yellow;
+}
+
+
+/* Navbar */
+.topNavbar {
+  background: #fff;
+  z-index: 999999;
+  top: 0px !important;
+  min-height: 58px;
+  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  position: fixed;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #3c3f45;
+  text-align: center;
+  padding: 18px 20px;
+  text-decoration: none;
+}
+
+
+ul .current {
+  font-weight: bold;
+  color: rgb(184, 184, 4);
+}
+
+
+/* welcome page */
+.welcome-bg {
+  background: url(./asserts/images/welcome.jpeg) no-repeat;
+  background-size: cover;
+  background-blend-mode: overlay;
+  min-height: 80dvh;
+}
+
+.welcome-page-content-text {
+  color:rgb(69, 68, 68);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.welcome-page-content-text .container {
+  align-items: left;
+  justify-content: center;
+  padding-top: 20%;
+  margin: 20px 100px 20px 120px;
+  text-align: justify;
+}
+
+.name {
+  color: rgb(184, 184, 4);
+}
+
+.memeber-name {
+  color: rgb(69, 68, 68);
+}
