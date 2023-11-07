@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar.js";
 
 function Welcome() {
+  const [userInput, setUserInput] = useState("");
+
+  const handleInputChange = (e) => {
+    setUserInput(e.target.value);
+  };
+
   return (
     <div>
       <Navbar />
@@ -10,8 +16,10 @@ function Welcome() {
           <div className="welcome-page-content-text">
             <div className=""></div>
             <div className="container">
-              <h2 className="memeber-name">Hi! <span className="name">Ruwandi</span></h2>
-              <br/>
+              <h2 className="memeber-name">
+                Hi! <span className="name">{userInput}</span>
+              </h2>
+              <br />
               <h2>Welcome to FitSpot</h2>
               <p>
                 At FitSpot, we believe that fitness is not just a destination;
@@ -21,15 +29,22 @@ function Welcome() {
                 motivating community are here to support you every step of the
                 way.
               </p>
-              <br/>
+              <br />
               <h2>Our mission</h2>
               <p>
-                our mission is to inspire and
-                empower individuals to lead healthier lives. We strive to create
-                a positive and inclusive fitness environment where everyone
-                feels welcome and motivated to achieve their fitness
-                aspirations.
+                our mission is to inspire and empower individuals to lead
+                healthier lives. We strive to create a positive and inclusive
+                fitness environment where everyone feels welcome and motivated
+                to achieve their fitness aspirations.
               </p>
+              <br />
+              <input
+                className="userInput"
+                type="text"
+                placeholder="Type something..."
+                value={userInput}
+                onChange={handleInputChange}
+              />
             </div>
           </div>
         </div>
