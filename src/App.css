@@ -45,11 +45,11 @@ body {
 
 #login-form .login-form {
   text-align: center;
-  margin-top: 7%;
+  margin-top: 5%;
   margin-left: 10%;
   background: rgba(42, 42, 42, 0.7);
   width: 350px;
-  height: 470px;
+  height: 500px;
   padding: 35px;
 }
 
@@ -97,6 +97,10 @@ body {
 
 #login-form .forget-pw-section .forget-pw-link {
   color: yellow;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
 }
 
 
@@ -160,7 +164,7 @@ ul .current {
 .welcome-page-content-text .container {
   align-items: left;
   justify-content: center;
-  padding-top: 20%;
+  padding-top: 15%;
   margin: 20px 100px 20px 120px;
   text-align: justify;
 }
@@ -172,3 +176,13 @@ ul .current {
 .memeber-name {
   color: rgb(69, 68, 68);
 }
+
+.userInput{
+  font-family: "Poppins", sans-serif;
+  color:black;
+  background-color: transparent;
+  border:1px solid rgb(69, 68, 68);
+  border-radius:5px;
+  padding:10px;
+}
+
