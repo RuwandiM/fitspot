@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar.js";
+import { useLocation } from "react-router-dom";
 
-function Welcome() {
+const Welcome = () =>  {
   const [userInput, setUserInput] = useState("");
+  const location = useLocation();
+  console.log(location);
+  const name = location.state.name;
+  console.log("username", name);
 
   const handleInputChange = (e) => {
     setUserInput(e.target.value);
@@ -17,7 +22,8 @@ function Welcome() {
             <div className=""></div>
             <div className="container">
               <h2 className="memeber-name">
-                Hi! <span className="name">{userInput}</span>
+                Hi! {name}
+                <span className="name">{userInput}</span>
               </h2>
               <br />
               <h2>Welcome to FitSpot</h2>
