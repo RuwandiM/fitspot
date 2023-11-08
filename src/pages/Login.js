@@ -5,19 +5,28 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLogin = (e) => {
-    
+  // conect with the API and do authentication
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (username === "" || password === "") {
-      setErrorMessage("Username and password are required");
-    } else if (username !== "testUser" || password !== "abc123") {
-      setErrorMessage("Invalid username or password");
-    } else {
-       window.location.href = "/Welcome";
-      console.log("Welcome!");
+    try {
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        window.location.href = "/Welcome";
+      } else {
+        setErrorMessage("Invalid username or password");
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
-
   return (
     <div id="login-form" className="login-bg" style={{ height: "100dvh" }}>
       <div className="container">
