@@ -5,19 +5,20 @@ function Navbar() {
     <div className="topNavbar">
       <ul>
         <li>
-          <a href=""  className="current">Home</a>
+          <span href="" className="current">
+            Home
+          </span>
         </li>
         <li>
-          <a href="">News</a>
+          <span href="">News</span>
         </li>
         <li>
-          <a href="">Contact</a>
+          <span href="">Contact</span>
         </li>
         <li>
-          <a href="">About</a>
+          <span href="">About</span>
         </li>
       </ul>
-      
     </div>
   );
 }

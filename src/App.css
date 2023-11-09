@@ -132,7 +132,7 @@ li {
   float: left;
 }
 
-li a {
+li span {
   display: block;
   color: #3c3f45;
   text-align: center;
