@@ -5,9 +5,7 @@ import {useLocation} from 'react-router-dom';
 const Welcome = () => {
   const [userInput, setUserInput] = useState("");
   const location  =useLocation();
-  console.log(location);
   const name=location.state.name;
-  console.log("username", name);
 
   const handleInputChange = (e) => {
     setUserInput(e.target.value);

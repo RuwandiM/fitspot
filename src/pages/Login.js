@@ -15,8 +15,6 @@ const Login = () => {
       setErrorMessage("Invalid username or password");
     } else {
       navigate("/Welcome", {state:{name:username}});
-      // <Welcome name={username}/>
-      // console.log("Welcome!");
     }
   };
 
