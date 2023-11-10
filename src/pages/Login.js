@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Login= () => {
   const [username, setUsername] = useState("");
@@ -7,28 +8,30 @@ const Login= () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  // conect with the API and do authentication
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+  // conect with the API and do authentication  
+  const handleLogin = async(e) =>{
+    try{
+      const response = await axios.post("http://localhost:5000/api/login",{
+        username,
+        password,
+      },{
+        headers:{
+          "Content-type":"application/json",
         },
-        body: JSON.stringify({ username, password }),
       });
-
-      const data = await response.json();
-      if (data.success) {
-          navigate("/Welcome", { state: { name: username } });
-      } else {
+      const data = response.data;
+      if(data.success){
+        navigate("/Welcome", {state:{name:username}});
+      }else{
+        console.log("come")
         setErrorMessage("Invalid username or password");
       }
-    } catch (error) {
-      console.error("Error:", error);
+    }catch(error){
+      setErrorMessage("Invalid username or password");
     }
-  };
+  }
+
+
   return (
     <div id="login-form" className="login-bg" style={{ height: "100dvh" }}>
       <div className="container">

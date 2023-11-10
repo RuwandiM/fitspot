@@ -5,16 +5,16 @@ const Navbar = () => {
     <div className="topNavbar">
       <ul>
         <li>
-          <span href=""  className="current">Home</span>
+          <span className="current">Home</span>
         </li>
         <li>
-          <span href="">News</span>
+          <span>News</span>
         </li>
         <li>
-          <span href="">Contact</span>
+          <span>Contact</span>
         </li>
         <li>
-          <span href="">About</span>
+          <span>About</span>
         </li>
       </ul>
       
