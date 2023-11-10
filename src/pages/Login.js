@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import Welcome from "./Welcome";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ const Login = () => {
           <div className="login-form">
             <h1>FitSpot</h1>
             <p>logo</p>
-            <div className="form-body" > 
+            <div className="form-body">
               <div className="input-section">
                 <div className="input-section-fields">
                   <label htmlFor="uname">
@@ -59,7 +60,7 @@ const Login = () => {
                 </div>
 
                 <br />
-                <button onClick={handleLogin} className="loginBtn" >
+                <button onClick={handleLogin} className="loginBtn">
                   Login
                 </button>
                 <br />
@@ -70,10 +71,7 @@ const Login = () => {
 
               <div className="forget-pw-section">
                 <span className="psw">
-                  Forgot{" "}
-                  <span className="forget-pw-link">
-                    password?
-                  </span>
+                  Forgot <span className="forget-pw-link">password?</span>
                 </span>
               </div>
             </div>
