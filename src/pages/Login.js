@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
-import Welcome from "./Welcome";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -8,8 +7,7 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    
+  const handleLogin = (e) => { 
     if (username === "" || password === "") {
       setErrorMessage("Username and password are required");
     } else if (username !== "testUser" || password !== "abc123") {

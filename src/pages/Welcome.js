@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar.js";
 import {useLocation} from 'react-router-dom';
-import { context } from "./Login";
 
 const Welcome = () => {
   const [userInput, setUserInput] = useState("");
