@@ -17,7 +17,6 @@ const Navbar = () => {
           <span>About</span>
         </li>
       </ul>
-      
     </div>
   );
 }
