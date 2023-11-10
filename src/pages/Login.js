@@ -82,9 +82,9 @@ const Login= () => {
               <div className="forget-pw-section">
                 <span className="psw">
                   Forgot{" "}
-                  <a href="" className="forget-pw-link">
+                  <span href="" className="forget-pw-link">
                     password?
-                  </a>
+                  </span>
                 </span>
               </div>
             </div>
