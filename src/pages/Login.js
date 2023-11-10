@@ -1,21 +1,36 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
-const Login = () => {
+const Login= () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => { 
-    if (username === "" || password === "") {
-      setErrorMessage("Username and password are required");
-    } else if (username !== "testUser" || password !== "abc123") {
+  // conect with the API and do authentication  
+  const handleLogin = async(e) =>{
+    try{
+      const response = await axios.post("http://localhost:5000/api/login",{
+        username,
+        password,
+      },{
+        headers:{
+          "Content-type":"application/json",
+        },
+      });
+      const data = response.data;
+      if(data.success){
+        navigate("/Welcome", {state:{name:username}});
+      }else{
+        console.log("come")
+        setErrorMessage("Invalid username or password");
+      }
+    }catch(error){
       setErrorMessage("Invalid username or password");
-    } else {
-      navigate("/Welcome", {state:{name:username}});
     }
-  };
+  }
+
 
   return (
     <div id="login-form" className="login-bg" style={{ height: "100dvh" }}>
@@ -25,7 +40,7 @@ const Login = () => {
           <div className="login-form">
             <h1>FitSpot</h1>
             <p>logo</p>
-            <div className="form-body">
+            <div className="form-body" >
               <div className="input-section">
                 <div className="input-section-fields">
                   <label htmlFor="uname">

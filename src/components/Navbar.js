@@ -1,13 +1,11 @@
 import React from "react";
 
-const Navbar = () =>{
+const Navbar = () => {
   return (
     <div className="topNavbar">
       <ul>
         <li>
-          <span className="current">
-            Home
-          </span>
+          <span className="current">Home</span>
         </li>
         <li>
           <span>News</span>
