@@ -1,20 +1,20 @@
 import React, { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
-function Login() {
+
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
-    
-    e.preventDefault();
     if (username === "" || password === "") {
       setErrorMessage("Username and password are required");
     } else if (username !== "testUser" || password !== "abc123") {
       setErrorMessage("Invalid username or password");
     } else {
-       window.location.href = "/Welcome";
-      console.log("Welcome!");
+      navigate("/Welcome", {state:{name:username}});
     }
   };
 
@@ -26,7 +26,7 @@ function Login() {
           <div className="login-form">
             <h1>FitSpot</h1>
             <p>logo</p>
-            <form className="form-body" onSubmit={handleLogin}>
+            <div className="form-body">
               <div className="input-section">
                 <div className="input-section-fields">
                   <label htmlFor="uname">
@@ -59,7 +59,7 @@ function Login() {
                 </div>
 
                 <br />
-                <button type="submit" className="loginBtn">
+                <button onClick={handleLogin} className="loginBtn">
                   Login
                 </button>
                 <br />
@@ -70,13 +70,10 @@ function Login() {
 
               <div className="forget-pw-section">
                 <span className="psw">
-                  Forgot{" "}
-                  <a href="#" className="forget-pw-link">
-                    password?
-                  </a>
+                  Forgot <span className="forget-pw-link">password?</span>
                 </span>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
